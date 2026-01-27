@@ -15,17 +15,21 @@ guide is build when the docker containers were at the following version:
     - Ollama: v0.15.2
 
 1) clone a copy of this git repo locally
+
     git clone 
 
 2) Review hardware specs in the docker-compose.yaml file
 
 3) CD into docker deployment files
+
     cd DeploymentFiles
 
 4) run Docker Compose in detached mode, which will pull and setup everything within the compose file
+
     sudo docker compose up -d
 
 5) navigate to open-webui, you will be prompted to login into account. Our compose will restart the container on boot.
+
     https://localhost:9000
 
 6) You can now navigate to your user icon to click, follow path Settings > Admin Settings > Models > icon for download in top right.
