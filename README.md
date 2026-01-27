@@ -50,7 +50,7 @@ We will be deploying on a linux system that is up to date and has the following 
 
 5) select the model in the bottom part of the chat window, here you can select "add langauge model". If ollama is running you can select it.
 
-6) once selected choose auto gen, and it will pull in all your local models that you can choose to prompt.
+6) once selected choose auto gen, and it will pull in all your local models that you can choose to prompt. (I have attached in the repository an example file of a config you can use, if you choose to set different models for continue.)
 
 7) Once setup, I would advice you explore the settings, in particular to see what the chat window can access. By default everything is set to "ask permission" so you have to feed it via context.
 
