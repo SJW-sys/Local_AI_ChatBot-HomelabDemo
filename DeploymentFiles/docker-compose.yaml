@@ -1,0 +1,57 @@
+services:
+  ollama:
+    # image for container, using latest to be on the bleeding edge (double edged sword)
+    image: ollama/ollama:latest
+    # name
+    container_name: ollama
+    # Expose only on localhost since the goal is to access locally
+    ports:
+      - "127.0.0.1:11434:11434"
+    # Persist model cache & config in a non‑root location
+    volumes:
+      - ollama-data:/home/ollama/.ollama
+    # Run as a non‑root user (UID:GID = 1000:1000) to avoid root access in event of user escaping the container
+    user: "1000:1000"
+    # GPU and resource limits to ensure models don't suffocate your system
+    deploy:
+      resources:
+        limits:
+          memory: 4g                # total allowed RAM cap for container, I recommend (at max for the demo) 20% less then your system total
+          cpus: "2.0"                 # total allowed CPU cap for container, I recommend (at max for the demo) 20% less then your system total
+    # set container to always restart unless stopped, I prefer this for troubleshooting reasons.
+    restart: unless-stopped
+    # networks
+    networks:
+      - ai-network          # dedicated network for AI stack
+      
+  # Clean web interface for managing your ollama instance and your local models, while also giving nice tools and features like a chat window with history.
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ## We are telling open-webui to be accessible on 8282, via internal forwarding in docker from 8080
+    ports:
+      - "127.0.0.1:9000:8080"
+    volumes:
+      - open-webui-data:/app/backend/data
+    ## We are letting open-webui know where the ollama container will be accessible so it can communicate via API
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    # Setting up container to only run if ollama is running
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    networks:
+      - ai-network
+
+volumes:
+  ollama-data:
+    name: ollama-data
+    #external: true #comment out, unless volume made before hand. I like to have this for troubleshooting
+  open-webui-data:
+    name: open-webui-data
+    #external: true  #comment out, unless volume made before hand. I like to have this for troubleshooting
+
+networks:
+  # setup dedicated private docker network for ollama
+  ai-network:
+    driver: bridge
