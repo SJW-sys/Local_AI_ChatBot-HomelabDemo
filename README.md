@@ -14,45 +14,45 @@ guide is build when the docker containers were at the following version:
     - Open-WebUI: v0.7.2
     - Ollama: v0.15.2
 
-### 1) clone a copy of this git repo locally
+1) clone a copy of this git repo locally
     git clone 
 
-### 2) Review hardware specs in the docker-compose.yaml file
+2) Review hardware specs in the docker-compose.yaml file
 
-### 3) CD into docker deployment files
+3) CD into docker deployment files
     cd DeploymentFiles
 
-### 4) run Docker Compose in detached mode, which will pull and setup everything within the compose file
+4) run Docker Compose in detached mode, which will pull and setup everything within the compose file
     sudo docker compose up -d
 
-### 5) navigate to open-webui, you will be prompted to login into account. Our compose will restart the container on boot.
+5) navigate to open-webui, you will be prompted to login into account. Our compose will restart the container on boot.
     https://localhost:9000
 
-### 6) You can now navigate to your user icon to click, follow path Settings > Admin Settings > Models > icon for download in top right.
+6) You can now navigate to your user icon to click, follow path Settings > Admin Settings > Models > icon for download in top right.
 
-### 7) you will now have a pop-up where you can now enter models to 'pull from ollama.com', then click the download icon. I would start with 2b sized models or smaller, then get larger models once you have played with the speed of responses.
+7) you will now have a pop-up where you can now enter models to 'pull from ollama.com', then click the download icon. I would start with 2b sized models or smaller, then get larger models once you have played with the speed of responses.
 
-### 8) Once complete you can exit the pop-up and select "new chat" on the left hand menu.
+8) Once complete you can exit the pop-up and select "new chat" on the left hand menu.
 
-### 9) Once setup, I would advice you explore the settings. If the goal is privacy, I would check the settings for these features: Direct Connects, OpenAI API, and Community Sharing.
+9) Once setup, I would advice you explore the settings. If the goal is privacy, I would check the settings for these features: Direct Connects, OpenAI API, and Community Sharing.
 
 
 ## How to setup a open-source code agent with continue.dev in VScode
 We will be deploying on a linux system that is up to date and has the following preinstalled via deb package:  Microsoft VS code (Version: 1.108.2)
 
-### 1) Ensure you have Ollama deployed first and its running, such as following the above steps
+1) Ensure you have Ollama deployed first and its running, such as following the above steps
 
-### 2) Open VS code and navigate to the Extensions tab, search for Continue.
+2) Open VS code and navigate to the Extensions tab, search for Continue.
 
-### 3) select top option, check its a verified source and the creator is 'Continue.dev'. Click 'install' button. You will have to trust the publisher to install.
+3) select top option, check its a verified source and the creator is 'Continue.dev'. Click 'install' button. You will have to trust the publisher to install.
 
-### 4) Once installed, select extension from side menu if it does not automatically open
+4) Once installed, select extension from side menu if it does not automatically open
 
-### 5) select the model in the bottom part of the chat window, here you can select "add langauge model". If ollama is running you can select it.
+5) select the model in the bottom part of the chat window, here you can select "add langauge model". If ollama is running you can select it.
 
-### 6) once selected choose auto gen, and it will pull in all your local models that you can choose to prompt.
+6) once selected choose auto gen, and it will pull in all your local models that you can choose to prompt.
 
-### 7) Once setup, I would advice you explore the settings, in particular to see what the chat window can access. By default everything is set to "ask permission" so you have to feed it via context.
+7) Once setup, I would advice you explore the settings, in particular to see what the chat window can access. By default everything is set to "ask permission" so you have to feed it via context.
 
 
 ## Prompt Engineering
