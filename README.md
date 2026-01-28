@@ -8,29 +8,32 @@ Running AI, especially on a local desktop, is not the star-studded experience of
 We will be using two different docker open source projects, Ollama, for hosting, managing and downloading the public models, and Open-WebUI, for interacting with them via web-gui. We will also touch on how to interface with VScode via continue.dev extension to use our models from VScode.
 
 ## How to deploy
-We will be deploying on a linux system that is up to date and has the following preinstalled: Git (version 28.2.2) and docker (Engine version: 28.2.2)
+We will be deploying on a linux system that is up to date and has the following preinstalled: Git (version 28.2.2) and Docker Engine (version: 28.2.2)
 
 guide is build when the docker containers were at the following version:
     - Open-WebUI: v0.7.2
     - Ollama: v0.15.2
 
 1) clone a copy of this git repo locally
-
-    git clone 
+>
+>    git clone https://github.com/SJW-sys/Local_AI_ChatBot-HomelabDemo.git
+>
 
 2) Review hardware specs in the docker-compose.yaml file
 
-3) CD into docker deployment files
-
-    cd DeploymentFiles
+3) navigate into docker deployment files
+>
+>    cd DeploymentFiles
+>
 
 4) run Docker Compose in detached mode, which will pull and setup everything within the compose file
-
-    sudo docker compose up -d
+>
+>   sudo docker compose up -d
+>
 
 5) navigate to open-webui, you will be prompted to login into account. Our compose will restart the container on boot.
 
-    https://localhost:9000
+   https://localhost:9000
 
 6) You can now navigate to your user icon to click, follow path Settings > Admin Settings > Models > icon for download in top right.
 
