@@ -16,9 +16,7 @@ guide is build when the docker containers were at the following version:
 
 1) clone a copy of this git repo locally
 
-
     `git clone https://github.com/SJW-sys/Local_AI_ChatBot-HomelabDemo.git`
-
 
 2) Review hardware specs in the docker-compose.yaml file
 
