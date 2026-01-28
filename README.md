@@ -14,22 +14,23 @@ guide is build when the docker containers were at the following version:
     - Open-WebUI: v0.7.2
     - Ollama: v0.15.2
 
-1) clone a copy of this git repo locally
+1) clone a copy of this git repo locally:
 
     `git clone https://github.com/SJW-sys/Local_AI_ChatBot-HomelabDemo.git`
 
-2) Review hardware specs in the docker-compose.yaml file
+2) Review hardware specs in the docker-compose.yaml file.
 
-3) navigate into docker deployment files
+3) Always review external scripts, commands and tools before executing on your system.
+
+3) navigate into docker deployment files:
 
     `cd DeploymentFiles`
 
-
-4) run Docker Compose in detached mode, which will pull and setup everything within the compose file
+4) run Docker Compose in detached mode, which will pull images and setup everything within the compose file:
 
     `sudo docker compose up -d`
 
-5) navigate to open-webui, you will be prompted to login into account. Our compose will restart the container on boot.
+5) navigate to open-webui, you will be prompted to login into account. Our compose will restart the container on boot:
 
     https://localhost:9000
 
@@ -51,7 +52,7 @@ We will be deploying on a linux system that is up to date and has the following 
 
 3) select top option, check its a verified source and the creator is 'Continue.dev'. Click 'install' button. You will have to trust the publisher to install.
 
-4) Once installed, select extension from side menu if it does not automatically open
+4) Once installed, select extension from side menu if it does not automatically open.
 
 5) select the model in the bottom part of the chat window, here you can select "add langauge model". If ollama is running you can select it.
 
