@@ -8,7 +8,7 @@ Running AI, especially on a local desktop, is not the star-studded experience of
 We will be using two different docker open source projects, Ollama, for hosting, managing and downloading the public models, and Open-WebUI, for interacting with them via web-gui. We will also touch on how to interface with VScode via continue.dev extension to use our models from VScode.
 
 ## How to deploy
-We will be deploying on a linux system that is up to date and has the following preinstalled: Git (version 28.2.2) and Docker Engine (version: 28.2.2)
+We will be deploying on a linux system that is up to date and has the following preinstalled: Git (version 28.2.2) & Docker Engine (version: 28.2.2) & sudo installed, account with sudo level permissions.
 
 guide is build when the docker containers were at the following version:
     - Open-WebUI: v0.7.2
