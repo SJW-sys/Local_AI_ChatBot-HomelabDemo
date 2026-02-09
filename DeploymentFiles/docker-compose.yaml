@@ -23,7 +23,7 @@ services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:main #this image will not work with some brand GPU passthroughs, but will work with cpu/intel gpu
     container_name: open-webui
-    ## We are telling open-webui to be accessible on 8282, via internal forwarding in docker from 8080
+    ## We are telling open-webui to be accessible to the localhost 8282, via internal forwarding in docker from 8080
     ports:
       - "127.0.0.1:9000:8080"
     volumes:
