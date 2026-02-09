@@ -4,14 +4,9 @@ services:
     image: ollama/ollama:latest
     # name
     container_name: ollama
-    # Expose only on localhost since the goal is to access locally
-    ports:
-      - "127.0.0.1:11434:11434"
     # Persist model cache & config in a non‑root location
     volumes:
-      - ollama-data:/home/ollama/.ollama
-    # Run as a non‑root user (UID:GID = 1000:1000) to avoid root access in event of user escaping the container
-    user: "1000:1000"
+      - ollama-data:/root/.ollama
     # GPU and resource limits to ensure models don't suffocate your system
     deploy:
       resources:
@@ -26,7 +21,7 @@ services:
       
   # Clean web interface for managing your ollama instance and your local models, while also giving nice tools and features like a chat window with history.
   open-webui:
-    image: ghcr.io/open-webui/open-webui:main
+    image: ghcr.io/open-webui/open-webui:main #this image will not work with some brand GPU passthroughs, but will work with cpu/intel gpu
     container_name: open-webui
     ## We are telling open-webui to be accessible on 8282, via internal forwarding in docker from 8080
     ports:
