@@ -134,9 +134,6 @@ please replace the hardware data with your information
 ### Why does the repository have 'Demo' in the title?
 this "demo" repo is based on real world local deployments in my Homelab. Some settings may be changed, or different for privacy and safety. Typically in a real world scenario, you would use .gitignore to filter out potential sensitive files, as well has have pipeline jobs to find secrets. Typically you also consider storing variables within the git repository platform itself in a mask state to prevent jr devs from pushing secrets accidentally.
 
-### Why multiple branches
-I have a test and main branch to more demo a enterprise setup, where you might have people pushing changes to a protected test branch that is then has pipelines to stage tooling in a test space. Which once pulled into main, would deploy the same setup to PROD.
-
 ### Where can I find more about this project and your thought process?
 I make it a habit that my files typically have dozens of in-line comments to better help anyone using them for the first time to understand what is happening, maybe not always why. Also please check out my blog, it typically has more information on my projects (sometimes the post is still being planned).
 
