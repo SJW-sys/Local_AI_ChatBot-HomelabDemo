@@ -4,6 +4,9 @@ Host your own AI on your local machine via Docker for research, coding and learn
 ## Setting expectations
 Running AI, especially on a local desktop, is not the star-studded experience of chatGPT. What you might be gaining in privacy, you loose in speed and typically the knowledge of the models you can use. Millage will vary based on your machine hardware. Ideally you would setup and passthrough a GPU with tens of VRAM, however this demo is not focused on getting you the best experience with a GPU as there are way more complexities (IOMMU, drivers, correct docker images, OS, using via cli, etc). We are simply focused on getting you hosting a AI chat bot in this demo.
 
+### non-secure deployment
+While many ways to deploy docker containers in a stronger security posture (rootless, file permissions and scopes, define run users, etc) we will not be focused on that here. Its important to note, some of these security postures availability and complexity come down to the containers themselves, ie. ollama using a defined docker user at 1000:1000 is possible, but adds complexity overhead of managing the storage of models between reboots and passing through GPUs.
+
 ## Overview
 We will be using two different docker open source projects, Ollama, for hosting, managing and downloading the public models, and Open-WebUI, for interacting with them via web-gui. We will also touch on how to interface with VScode via continue.dev extension to use our models from VScode.
 
