@@ -147,7 +147,7 @@ No, but I have learned and expanded my knowledge of the tools within this projec
 I wanted to do a proper code repo that could be poke around so you could see commits and pulls that you might normally see in a team production repo, unfortunately due to the overhead and this [issue](https://github.com/orgs/community/discussions/6292), I will be "cutting corners" and doing everything locally then pushing to main directly from my machine. However, I will still leave the demo "main" and "test" branches with there protections.
 
 ## Notes on Docker Rootless
-Currently docker rootless does not support gpu pass through.
+Docker rootless does not allow gpu pass through.
 
 ## Docker features, CI/CD tooling/skills, and other tools leveraged in this project.
 - Docker:
