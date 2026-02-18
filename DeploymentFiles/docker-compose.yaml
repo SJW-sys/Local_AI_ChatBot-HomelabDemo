@@ -4,7 +4,7 @@ services:
     image: ollama/ollama:latest
     # name
     container_name: ollama
-    # Persist model cache & config in a non‑root location
+    # Persist model cache location per documentation
     volumes:
       - ollama-data:/root/.ollama
     # GPU and resource limits to ensure models don't suffocate your system
